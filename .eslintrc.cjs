@@ -1,3 +1,3 @@
 module.exports = {
-  extends: "smarthr",
+  extends: ["smarthr", "plugin:storybook/recommended"],
 };
