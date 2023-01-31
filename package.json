@@ -27,6 +27,7 @@
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.15.0",
     "eslint": "^8.33.0",
     "eslint-config-smarthr": "^6.7.0",
     "eslint-plugin-storybook": "^0.6.10",

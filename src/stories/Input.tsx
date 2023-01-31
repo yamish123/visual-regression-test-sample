@@ -9,6 +9,7 @@ interface Props {
 export const Input: React.FC<Props> = ({ value, disabled, handleChange }) => {
   return (
     <input
+      style={{ padding: "4px" }}
       type="text"
       value={value}
       disabled={disabled}
