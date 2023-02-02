@@ -16,3 +16,9 @@ export const Disabled = {
     disabled: true,
   },
 };
+
+export const Width = {
+  args: {
+    width: "100%",
+  },
+};
