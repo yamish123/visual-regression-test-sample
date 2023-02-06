@@ -5,14 +5,20 @@ import React from "react";
 
 import { CountriesSearchCombobox } from "./CountriesCombobox";
 
-const fetchCountriesMock = () => {
+const fetchCountriesMock = ({ error = false, loading = false } = {}) => {
   return rest.get("/api/countries", (req, res, ctx) => {
     return res(
-      ctx.json([
-        { value: 1, label: "アイスランド共和国" },
-        { value: 2, label: "アイルランド" },
-        { value: 3, label: "アゼルバイジャン共和国" },
-      ])
+      ctx.status(error ? 500 : 200),
+      ctx.delay(loading ? "infinite" : 0),
+      ctx.json(
+        error
+          ? []
+          : [
+              { value: 1, label: "アイスランド共和国" },
+              { value: 2, label: "アイルランド" },
+              { value: 3, label: "アゼルバイジャン共和国" },
+            ]
+      )
     );
   });
 };
@@ -41,5 +47,23 @@ export const IsOpen: StoryObj<typeof CountriesSearchCombobox> = {
     const canvas = within(canvasElement);
     const textbox = await canvas.findByRole("textbox");
     await userEvent.click(textbox);
+  },
+};
+
+export const IsError: StoryObj<typeof CountriesSearchCombobox> = {
+  ...IsOpen,
+  parameters: {
+    msw: {
+      handlers: [fetchCountriesMock({ error: true })],
+    },
+  },
+};
+
+export const IsLoading: StoryObj<typeof CountriesSearchCombobox> = {
+  ...IsOpen,
+  parameters: {
+    msw: {
+      handlers: [fetchCountriesMock({ loading: true })],
+    },
   },
 };
