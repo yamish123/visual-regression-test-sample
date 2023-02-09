@@ -10,12 +10,7 @@ export default {
 
 export const Default: StoryObj<typeof Input> = {
   render: (props) => {
-    return (
-      <label>
-        テキストボックス
-        <Input {...props} />
-      </label>
-    );
+    return <Input {...props} />;
   },
   args: {
     value: "hoge",

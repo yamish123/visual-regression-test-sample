@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="3" errors="0" time="1.044">
+  <testsuite name="Example/Input" errors="0" failures="3" skipped="0" timestamp="2023-02-09T01:42:47" time="0.844" tests="3">
+    <testcase classname="Example/Input Default smoke-test" name="Example/Input Default smoke-test" time="0.115">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  0
+Received:
+  1
+
+Message:
+  1 accessibility violation was detected
+    at testResultDependsOnViolations (/Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/utils.js:16:26)
+    at /Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/index.js:119:51
+    at Generator.next (&lt;anonymous&gt;)
+    at fulfilled (/Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/index.js:28:58)</failure>
+    </testcase>
+    <testcase classname="Example/Input Disabled smoke-test" name="Example/Input Disabled smoke-test" time="0.058">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  0
+Received:
+  1
+
+Message:
+  1 accessibility violation was detected
+    at testResultDependsOnViolations (/Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/utils.js:16:26)
+    at /Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/index.js:119:51
+    at Generator.next (&lt;anonymous&gt;)
+    at fulfilled (/Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/index.js:28:58)</failure>
+    </testcase>
+    <testcase classname="Example/Input Width smoke-test" name="Example/Input Width smoke-test" time="0.05">
+      <failure>assert.strictEqual(received, expected)
+
+Expected value to strictly be equal to:
+  0
+Received:
+  1
+
+Message:
+  1 accessibility violation was detected
+    at testResultDependsOnViolations (/Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/utils.js:16:26)
+    at /Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/index.js:119:51
+    at Generator.next (&lt;anonymous&gt;)
+    at fulfilled (/Users/shun.miyawaki/work/visual-regression-test-sample/node_modules/axe-playwright/dist/index.js:28:58)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
