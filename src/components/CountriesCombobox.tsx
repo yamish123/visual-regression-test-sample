@@ -11,12 +11,16 @@ export const CountriesSearchCombobox: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  console.log(isError);
 
   useEffect(() => {
     setIsLoading(true);
-    setIsError(true);
+    setIsError(false);
     fetch("/api/countries")
-      .then((res) => res.json().then((data) => setSelectableCountries(data)))
+      .then((res) => {
+        if (!res.ok) throw new Error(res.statusText);
+        return res.json().then((data) => setSelectableCountries(data));
+      })
       .catch(() => setIsError(true))
       .finally(() => setIsLoading(false));
   }, []);

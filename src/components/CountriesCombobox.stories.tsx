@@ -12,7 +12,7 @@ const fetchCountriesMock = ({ error = false, loading = false } = {}) => {
       ctx.delay(loading ? "infinite" : 0),
       ctx.json(
         error
-          ? []
+          ? null
           : [
               { value: 1, label: "アイスランド共和国" },
               { value: 2, label: "アイルランド" },
