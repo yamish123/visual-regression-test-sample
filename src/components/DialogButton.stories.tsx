@@ -1,16 +1,19 @@
-import { StoryContext, StoryObj } from "@storybook/react";
+import { Meta, StoryContext, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 
 import { DialogButton } from "./DialogButton";
 
-export default {
+const meta: Meta<typeof DialogButton> = {
   title: "Example/DialogButton",
   component: DialogButton,
-} as StoryContext;
+};
+export default meta;
 
-export const Default: StoryObj<typeof DialogButton> = {};
+type Story = StoryObj<typeof DialogButton>;
 
-export const IsOpen: StoryObj<typeof DialogButton> = {
+export const Default: Story = {};
+
+export const IsOpen: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = await canvas.findByText("ダイアログを開く");

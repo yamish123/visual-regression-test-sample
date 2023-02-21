@@ -1,24 +1,27 @@
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { Parameters, StoryContext, StoryObj } from "@storybook/react";
+import { Meta, Parameters, StoryContext, StoryObj } from "@storybook/react";
 
 import { Header } from "./Header";
 
-export default {
+const meta: Meta<typeof Header> = {
   title: "Example/Header",
   component: Header,
   parameters: {
     layout: "fullscreen",
-  } as Parameters,
-} as StoryContext;
+  },
+};
+export default meta;
 
-export const Default: StoryObj<typeof Header> = {
+type Story = StoryObj<typeof Header>;
+
+export const Default: Story = {
   args: {
     tenants: [{ id: "1", name: "株式会社SmartHR" }],
     user: "info@example.com",
   },
 };
 
-export const Mobile: StoryObj<typeof Header> = {
+export const Mobile: Story = {
   ...Default,
   parameters: {
     chromatic: {

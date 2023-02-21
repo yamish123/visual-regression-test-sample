@@ -1,14 +1,17 @@
-import { StoryContext, StoryObj } from "@storybook/react";
+import { Meta, StoryContext, StoryObj } from "@storybook/react";
 import React from "react";
 
 import { Input } from "./Input";
 
-export default {
+const meta: Meta<typeof Input> = {
   title: "Example/Input",
   component: Input,
-} as StoryContext;
+};
+export default meta;
 
-export const Default: StoryObj<typeof Input> = {
+type Story = StoryObj<typeof Input>;
+
+export const Default: Story = {
   render: (props) => {
     return (
       <label>
@@ -22,14 +25,14 @@ export const Default: StoryObj<typeof Input> = {
   },
 };
 
-export const Disabled: StoryObj<typeof Input> = {
+export const Disabled: Story = {
   ...Default,
   args: {
     disabled: true,
   },
 };
 
-export const Width: StoryObj<typeof Input> = {
+export const Width: Story = {
   ...Default,
   args: {
     width: "100%",

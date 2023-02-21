@@ -1,4 +1,4 @@
-import { Parameters, StoryContext, StoryObj } from "@storybook/react";
+import { Meta, Parameters, StoryContext, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { rest } from "msw";
 import React from "react";
@@ -23,17 +23,20 @@ const fetchCountriesMock = ({ error = false, loading = false } = {}) => {
   });
 };
 
-export default {
+const meta: Meta<typeof CountriesSearchCombobox> = {
   title: "Example/CountriesSearchCombobox",
   component: CountriesSearchCombobox,
   parameters: {
     msw: {
       handlers: [fetchCountriesMock()],
     },
-  } as Parameters,
-} as StoryContext;
+  },
+};
+export default meta;
 
-export const Default: StoryObj<typeof CountriesSearchCombobox> = {
+type Story = StoryObj<typeof CountriesSearchCombobox>;
+
+export const Default: Story = {
   render: () => (
     <div style={{ height: "200px" }}>
       <CountriesSearchCombobox />
@@ -41,7 +44,7 @@ export const Default: StoryObj<typeof CountriesSearchCombobox> = {
   ),
 };
 
-export const IsOpen: StoryObj<typeof CountriesSearchCombobox> = {
+export const IsOpen: Story = {
   ...Default,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -50,7 +53,7 @@ export const IsOpen: StoryObj<typeof CountriesSearchCombobox> = {
   },
 };
 
-export const IsError: StoryObj<typeof CountriesSearchCombobox> = {
+export const IsError: Story = {
   ...IsOpen,
   parameters: {
     msw: {
@@ -59,7 +62,7 @@ export const IsError: StoryObj<typeof CountriesSearchCombobox> = {
   },
 };
 
-export const IsLoading: StoryObj<typeof CountriesSearchCombobox> = {
+export const IsLoading: Story = {
   ...IsOpen,
   parameters: {
     msw: {
