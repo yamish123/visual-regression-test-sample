@@ -13,6 +13,7 @@ export const Input: React.FC<Props> = ({
   width = "100px",
   handleChange,
 }) => {
+  console.log(value);
   return (
     <input
       style={{ padding: "4px", width }}

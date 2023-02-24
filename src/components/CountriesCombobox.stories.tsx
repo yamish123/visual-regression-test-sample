@@ -23,7 +23,7 @@ const fetchCountriesMock = ({ error = false, loading = false } = {}) => {
   });
 };
 
-const meta: Meta<typeof CountriesSearchCombobox> = {
+const meta = {
   title: "Example/CountriesSearchCombobox",
   component: CountriesSearchCombobox,
   parameters: {
@@ -31,10 +31,10 @@ const meta: Meta<typeof CountriesSearchCombobox> = {
       handlers: [fetchCountriesMock()],
     },
   },
-};
+} satisfies Meta<typeof CountriesSearchCombobox>;
 export default meta;
 
-type Story = StoryObj<typeof CountriesSearchCombobox>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (

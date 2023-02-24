@@ -3,13 +3,13 @@ import { userEvent, within } from "@storybook/testing-library";
 
 import { DialogButton } from "./DialogButton";
 
-const meta: Meta<typeof DialogButton> = {
+const meta = {
   title: "Example/DialogButton",
   component: DialogButton,
-};
+} satisfies Meta<typeof DialogButton>;
 export default meta;
 
-type Story = StoryObj<typeof DialogButton>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
