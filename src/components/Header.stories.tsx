@@ -19,13 +19,9 @@ export const Default: Story = {
     tenants: [{ id: "1", name: "株式会社SmartHR" }],
     user: "info@example.com",
   },
-};
-
-export const Mobile: Story = {
-  ...Default,
   parameters: {
     chromatic: {
-      viewports: [390],
+      viewports: [1200, 390],
     },
     viewport: {
       viewports: INITIAL_VIEWPORTS,
