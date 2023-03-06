@@ -21,22 +21,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
+const AppWithNotifcationBar: React.FC = () => {
+  const { setNotification } = useNotificationContext();
+
+  useEffect(() => {
+    setNotification({
+      type: "success",
+      bold: true,
+      message: "処理に成功しました。",
+    });
+  }, [setNotification]);
+
+  return <App />;
+};
+
 export const WithNotificationBar: Story = {
-  render: () => {
-    const Story: React.FC = () => {
-      const { setNotification } = useNotificationContext();
-
-      useEffect(() => {
-        setNotification({
-          type: "success",
-          bold: true,
-          message: "処理に成功しました。",
-        });
-      }, [setNotification]);
-
-      return <App />;
-    };
-
-    return <Story />;
-  },
+  render: () => <AppWithNotifcationBar />,
 };
