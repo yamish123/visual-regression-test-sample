@@ -1,0 +1,19 @@
+name: 'Test Storybook'
+
+on: push
+
+jobs:
+  test-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: 依存関係のインストール
+        run: npm install
+      - name: アクセシビリティテストの実行
+        run: npm run storybook & npm run test-storybook:ci
+      - name: テスト結果のレポート
+        uses: mikepenz/action-junit-report@v3
+        if: success() || failure()
+        with:
+          report_paths: 'junit.xml'
+
