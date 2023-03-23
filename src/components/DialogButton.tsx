@@ -15,7 +15,7 @@ export const DialogButton: React.FC = () => {
       <MessageDialog
         portalParent={portalParentRef.current || undefined}
         title="サンプルダイアログ"
-        description="これはサンプルのダイアログです。"
+        description="これはサンプルのダイアログ"
         isOpen={isOpen}
         onClickClose={closeDialog}
       />

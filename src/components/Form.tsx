@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 
 export const Form: React.FC = () => {
-  const [name, setName] = useState<string>("");
-
-  const handleChangeName: React.ChangeEventHandler<HTMLInputElement> = (
-    event
-  ) => {
-    setName(event.target.value);
-  };
+  const [email, setEmail] = useState<string>("");
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = () => {
     // 送信完了時の処理
@@ -15,18 +9,14 @@ export const Form: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          名前
-          <input name="name" value={name} onChange={handleChangeName} />
-        </label>
-      </div>
-      <div>
-        <label>
-          メールアドレス
-          <input name="email" value="example@example.com" />
-        </label>
-      </div>
+      <label>
+        メールアドレス
+        <input
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </label>
       <button>送信</button>
     </form>
   );

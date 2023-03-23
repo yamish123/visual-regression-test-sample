@@ -4,7 +4,7 @@ interface Props {
   value: string;
   disabled?: boolean;
   width?: string;
-  handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  handleChange: (value: string) => void;
 }
 
 export const Input: React.FC<Props> = ({
@@ -13,14 +13,13 @@ export const Input: React.FC<Props> = ({
   width = "100px",
   handleChange,
 }) => {
-  console.log(value);
   return (
     <input
       style={{ padding: "4px", width }}
       type="text"
       value={value}
       disabled={disabled}
-      onChange={handleChange}
+      onChange={(e) => handleChange(e.target.value)}
     />
   );
 };
