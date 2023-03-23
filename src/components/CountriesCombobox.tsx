@@ -11,7 +11,6 @@ export const CountriesSearchCombobox: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  console.log(isError);
 
   useEffect(() => {
     setIsLoading(true);
