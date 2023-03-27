@@ -14,6 +14,7 @@ module.exports = {
 
         return {
           message: () =>
+            'アクセシビリティのエラーが見つかりました。\n' +
             JSON.stringify(
               violations.map(({ id, impact, description, help }) => ({
                 id,
