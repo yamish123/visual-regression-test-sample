@@ -6,10 +6,7 @@ module.exports = {
     expect.extend({
       toValidA11y(violations) {
         if (violations.length === 0) {
-          return {
-            message: () => `no errors found.`,
-            pass: true,
-          };
+          return { pass: true };
         }
 
         return {
@@ -35,6 +32,7 @@ module.exports = {
   },
   async postRender(page) {
     const violations = await getViolations(page, '#storybook-root');
+    // 作成したカスタムマッチャでエラーをレポート
     expect(violations).toValidA11y();
   },
 };
