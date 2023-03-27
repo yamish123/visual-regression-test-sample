@@ -4,14 +4,14 @@ interface Props {
   value: string;
   disabled?: boolean;
   width?: string;
-  handleChange: (value: string) => void;
+  onChange: (value: string) => void;
 }
 
 export const Input: React.FC<Props> = ({
   value,
   disabled,
   width = "100px",
-  handleChange,
+  onChange,
 }) => {
   return (
     <input
@@ -19,7 +19,7 @@ export const Input: React.FC<Props> = ({
       type="text"
       value={value}
       disabled={disabled}
-      onChange={(e) => handleChange(e.target.value)}
+      onChange={(e) => onChange(e.target.value)}
     />
   );
 };
