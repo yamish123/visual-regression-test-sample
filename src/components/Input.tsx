@@ -10,7 +10,7 @@ interface Props {
 export const Input: React.FC<Props> = ({
   value,
   disabled,
-  width = "100px",
+  width = "120px",
   onChange,
 }) => {
   return (
